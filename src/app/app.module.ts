@@ -1,8 +1,15 @@
-import { BrowserModule } from '@angular/platform-browser';
+// Angular
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+// Project
+import { NgxButtonModule } from '@fil0157/ngx-button';
+
+// App
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+
+
 
 @NgModule({
   declarations: [
@@ -10,7 +17,8 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    NgxButtonModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

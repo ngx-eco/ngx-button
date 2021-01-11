@@ -122,6 +122,46 @@
           }
         }
       }
+    },
+    "@fil0157/ngx-button": {
+      "projectType": "library",
+      "root": "src/ngx-button",
+      "sourceRoot": "src/ngx-button/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "src/ngx-button/tsconfig.lib.json",
+            "project": "src/ngx-button/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "src/ngx-button/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/ngx-button/src/test.ts",
+            "tsConfig": "src/ngx-button/tsconfig.spec.json",
+            "karmaConfig": "src/ngx-button/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "src/ngx-button/tsconfig.lib.json",
+              "src/ngx-button/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ngx-button"
