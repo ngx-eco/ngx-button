@@ -3,3 +3,4 @@
  */
 
 export * from './lib/ngx-button.module';
+export * from './lib/components/ngx-button/ngx-button.component';
