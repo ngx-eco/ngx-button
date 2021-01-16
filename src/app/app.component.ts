@@ -10,4 +10,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ngx-button';
+
+  click() {
+    console.log('click');
+  }
 }
