@@ -13,12 +13,16 @@
     "url": "https://github.com/fil0157/ngx-button/issues"
   },
   "scripts": {
-    "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "demo:start": "ng serve demo",
+    "demo:build": "ng build demo --prod",
+    "demo:test": "ng test demo",
+    "demo:lint": "ng lint demo",
+    "demo:e2e": "ng e2e demo",
     "lib:start": "ng build @fil0157/ngx-button --watch",
     "lib:build": "ng build @fil0157/ngx-button && node tools/build-lib.js",
     "ngcc": "ngcc"
