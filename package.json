@@ -1,16 +1,16 @@
 {
-  "name": "@fil0157/ngx-button",
+  "name": "@ngx-eco/ngx-button",
   "version": "0.0.0",
   "description": "",
   "author": "fil0157 <fil0157@ya.ru>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fil0157/ngx-button.git"
+    "url": "git+https://github.com/ngx-eco/ngx-button.git"
   },
-  "homepage": "https://ngx-button.fil0157.ru",
+  "homepage": "https://ngx-button.ngx-eco.ru",
   "bugs": {
-    "url": "https://github.com/fil0157/ngx-button/issues"
+    "url": "https://github.com/ngx-eco/ngx-button/issues"
   },
   "scripts": {
     "start": "ng serve",
@@ -23,8 +23,8 @@
     "demo:test": "ng test demo",
     "demo:lint": "ng lint demo",
     "demo:e2e": "ng e2e demo",
-    "lib:start": "ng build @fil0157/ngx-button --watch",
-    "lib:build": "ng build @fil0157/ngx-button && node tools/build-lib.js",
+    "lib:start": "ng build @ngx-eco/ngx-button --watch",
+    "lib:build": "ng build @ngx-eco/ngx-button && node tools/build-lib.js",
     "ngcc": "ngcc"
   },
   "devDependencies": {

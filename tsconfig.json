@@ -16,8 +16,8 @@
       "dom"
     ],
     "paths": {
-      "@fil0157/ngx-button": [
-        "dist/lib/fil0157-ngx-button",
+      "@ngx-eco/ngx-button": [
+        "dist/lib/ngx-eco-ngx-button",
         "dist/lib"
       ]
     }

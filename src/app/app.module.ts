@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
 // Project
-import { NgxButtonModule } from '@fil0157/ngx-button';
+import { NgxButtonModule } from '@ngx-eco/ngx-button';
 
 // App
 import { AppComponent } from './app.component';

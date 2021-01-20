@@ -123,7 +123,7 @@
         }
       }
     },
-    "@fil0157/ngx-button": {
+    "@ngx-eco/ngx-button": {
       "projectType": "library",
       "root": "src/ngx-button",
       "sourceRoot": "src/ngx-button/src",
