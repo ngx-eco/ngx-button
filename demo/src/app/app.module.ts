@@ -2,6 +2,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+// Project
+import { NgxButtonModule } from '@fil0157/ngx-button';
+
 // App
 import { AppComponent } from './app.component';
 
@@ -13,6 +16,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
+    NgxButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
