@@ -13,11 +13,9 @@ type NgxButtonForm = 'basic' | 'round' | 'square';
   templateUrl: './ngx-button.component.html',
   styleUrls: ['./ngx-button.component.scss'],
   host: {
-    '[attr.disabled]': 'disabled || null',
     'class': 'ngx-button',
     '[style.background-color]': 'getBackgroundColor()',
     '[style.border-radius]': 'getBorderRadius()',
-    '[attr.tabindex]': 'getTabIndex()',
   },
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -43,7 +41,7 @@ export class NgxButtonComponent implements OnInit, AfterContentInit {
 
   @Input() buttonColor: NgxButtonColor = 'basic';
   @Input() buttonForm: NgxButtonForm = 'basic';
-  @Input() disabled;
+  @Input() disabled: boolean = false;
 
   constructor(
     private elementRef: ElementRef,
@@ -70,20 +68,12 @@ export class NgxButtonComponent implements OnInit, AfterContentInit {
   }
 
   private getBackgroundColor() {
-    if (this.isDisabled()) return `var(--${this.buttonColor}-disabled, var(--button-disabled-defoult))`
+    if (this.disabled) return `var(--${this.buttonColor}-disabled, var(--button-disabled-defoult))`
     else return this.hover ? `var(--${this.buttonColor}-hover)` : `var(--${this.buttonColor})`;
   }
 
   private getBorderRadius() {
-    return this.buttonForm === 'basic' ? '3px' : this.buttonForm === 'round' ? '50px' : '0';
-  }
-
-  private isDisabled(): boolean {
-    return this.hasHostAttributes('disabled', 'ng-reflect-disabled');
-  }
-
-  private getTabIndex() {
-    return this.isDisabled() ? -1 : 0;
+    return this.buttonForm === 'basic' ? '5px' : this.buttonForm === 'round' ? '50px' : '0';
   }
 
   private getHostElement(): HTMLElement {
