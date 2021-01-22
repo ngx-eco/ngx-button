@@ -29,3 +29,24 @@
 body {
   font-family: Montserrat, Roboto, sans-serif;
 }
+
+.ngx-button {
+
+  &-small {
+    padding: 2px 8px;
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  &-normal {
+    padding: 4px 12px;
+    font-size: 13.5px;
+    line-height: 22px;
+  }
+
+  &-large {
+    padding: 6px 16px;
+    font-size: 15px;
+    line-height: 24px;
+  }
+}
