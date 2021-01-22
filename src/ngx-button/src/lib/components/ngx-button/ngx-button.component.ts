@@ -39,7 +39,7 @@ export class NgxButtonComponent implements OnInit, AfterContentInit {
     'square',
   ]
 
-  @Input() buttonColor: NgxButtonColor = 'basic';
+  @Input() ngxButtonColor: NgxButtonColor = 'basic'
   @Input() buttonForm: NgxButtonForm = 'basic';
   @Input() disabled: boolean = false;
 
@@ -51,9 +51,9 @@ export class NgxButtonComponent implements OnInit, AfterContentInit {
   }
 
   ngAfterContentInit() {
-    for (const color of this.STANDARD_COLORS) {
-      if (this.hasHostAttributes(color)) this.buttonColor = color;
-    }
+    // for (const color of this.STANDARD_COLORS) {
+    //   if (this.hasHostAttributes(color)) this.buttonColor = color;
+    // }
     for (const form of this.STANDARD_FORMS) {
       if (this.hasHostAttributes(form)) this.buttonForm = form;
     }
@@ -68,8 +68,8 @@ export class NgxButtonComponent implements OnInit, AfterContentInit {
   }
 
   private getBackgroundColor() {
-    if (this.disabled) return `var(--${this.buttonColor}-disabled, var(--button-disabled-defoult))`
-    else return this.hover ? `var(--${this.buttonColor}-hover)` : `var(--${this.buttonColor})`;
+    if (this.disabled) return `var(--${this.ngxButtonColor}-disabled, var(--button-disabled-defoult))`
+    else return this.hover ? `var(--${this.ngxButtonColor}-hover)` : `var(--${this.ngxButtonColor})`;
   }
 
   private getBorderRadius() {
