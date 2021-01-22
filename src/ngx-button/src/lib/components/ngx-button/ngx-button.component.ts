@@ -5,6 +5,7 @@ import { AfterContentInit, ChangeDetectionStrategy, Component, ElementRef, HostL
 
 type NgxButtonColor = 'basic' | 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info';
 type NgxButtonForm = 'basic' | 'round' | 'square';
+type NgxButtonSize = 'small' | 'normal' | 'large';
 
 
 
@@ -14,6 +15,9 @@ type NgxButtonForm = 'basic' | 'round' | 'square';
   styleUrls: ['./ngx-button.component.scss'],
   host: {
     'class': 'ngx-button',
+    '[class.ngx-button-small]': 'ngxButtonSize === "small"',
+    '[class.ngx-button-normal]': 'ngxButtonSize === "normal"',
+    '[class.ngx-button-large]': 'ngxButtonSize === "large"',
     '[style.background-color]': 'getBackgroundColor()',
     '[style.border-radius]': 'getBorderRadius()',
   },
@@ -39,8 +43,15 @@ export class NgxButtonComponent implements OnInit, AfterContentInit {
     'square',
   ]
 
+  readonly STANDARD_SIZES: Array<NgxButtonSize> = [
+    'small',
+    'normal',
+    'large',
+  ]
+
   @Input() ngxButtonColor: NgxButtonColor = 'basic'
   @Input() ngxButtonForm: NgxButtonForm = 'basic';
+  @Input() ngxButtonSize: NgxButtonSize = 'normal';
   @Input() disabled: boolean = false;
 
   constructor(
