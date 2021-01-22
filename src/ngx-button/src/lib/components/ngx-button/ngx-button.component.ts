@@ -40,7 +40,7 @@ export class NgxButtonComponent implements OnInit, AfterContentInit {
   ]
 
   @Input() ngxButtonColor: NgxButtonColor = 'basic'
-  @Input() buttonForm: NgxButtonForm = 'basic';
+  @Input() ngxButtonForm: NgxButtonForm = 'basic';
   @Input() disabled: boolean = false;
 
   constructor(
@@ -54,9 +54,9 @@ export class NgxButtonComponent implements OnInit, AfterContentInit {
     // for (const color of this.STANDARD_COLORS) {
     //   if (this.hasHostAttributes(color)) this.buttonColor = color;
     // }
-    for (const form of this.STANDARD_FORMS) {
-      if (this.hasHostAttributes(form)) this.buttonForm = form;
-    }
+    // for (const form of this.STANDARD_FORMS) {
+    //   if (this.hasHostAttributes(form)) this.buttonForm = form;
+    // }
   }
 
   @HostListener('mouseenter', ['$event']) onMouseEnter ($event) {
@@ -73,7 +73,7 @@ export class NgxButtonComponent implements OnInit, AfterContentInit {
   }
 
   private getBorderRadius() {
-    return this.buttonForm === 'basic' ? '5px' : this.buttonForm === 'round' ? '50px' : '0';
+    return this.ngxButtonForm === 'basic' ? '5px' : this.ngxButtonForm === 'round' ? '50px' : '0';
   }
 
   private getHostElement(): HTMLElement {
