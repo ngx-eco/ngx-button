@@ -20,6 +20,7 @@ type NgxButtonSize = 'small' | 'normal' | 'large';
     '[class.ngx-button-large]': 'ngxButtonSize === "large"',
     '[style.background-color]': 'getBackgroundColor()',
     '[style.border-radius]': 'getBorderRadius()',
+    '[attr.disabled]': 'disabled || null',
   },
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
