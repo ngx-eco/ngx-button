@@ -12,11 +12,14 @@ export class SectionComponent implements OnInit {
 
   @Input() size
   @Input() form
-  @Input() disabled: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  click() {
+    console.log('click');
   }
 
 }
