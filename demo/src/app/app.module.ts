@@ -7,12 +7,14 @@ import { NgxButtonModule } from '@ngx-eco/ngx-button';
 
 // App
 import { AppComponent } from './app.component';
+import { SectionComponent } from './section/section.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    SectionComponent,
   ],
   imports: [
     BrowserModule,
