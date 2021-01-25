@@ -12,6 +12,7 @@ export class SectionComponent implements OnInit {
 
   @Input() size
   @Input() form
+  @Input() type
 
   constructor() { }
 
