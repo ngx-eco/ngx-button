@@ -15,6 +15,14 @@
   --warning-hover: #e0942a;
   --info-hover: #1a82ae;
 
+  --basic-shadow: 0 0 0 3px rgba(0,0,0,.2);
+  --primary-shadow: 0 0 0 3px rgba(92,147,237,.5);
+  --secondary-shadow: 0 0 0 3px rgba(100,106,112,.5);
+  --success-shadow: 0 0 0 3px rgba(102,201,136,.5);
+  --danger-shadow: 0 0 0 3px rgba(223,109,105,.5);
+  --warning-shadow: 0 0 0 3px rgba(200,146,70,.5);
+  --info-shadow: 0 0 0 3px rgba(65,170,214,.5);
+
   --basic-disabled: #dddddd;
   --primary-disabled: #83adf1;
   --secondary-disabled: #898e92;
@@ -48,11 +56,6 @@ body {
 
   &:hover:not([disabled]) {
     cursor: pointer;
-  }
-
-  &:focus {
-    // box-shadow: 0 0 0 3px rgba(63,128,234,.25);
-    box-shadow: 0 0 0 3px rgba(92,147,237,.5);
   }
 
   &-small {

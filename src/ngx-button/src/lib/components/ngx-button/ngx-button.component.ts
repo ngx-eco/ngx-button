@@ -36,6 +36,7 @@ type NgxButtonType = 'basic' | 'line' | 'flat' | 'raised';
     '[style.background-color]': 'getBackgroundColor()',
     '[style.border-radius]': 'getBorderRadius()',
     '[style.border-color]': 'getBorderColor()',
+    '[style.box-shadow]': 'getBoxShadow()',
     '[style.color]': 'getColor()',
 
     '[attr.disabled]': 'disabled || null',
@@ -45,6 +46,7 @@ type NgxButtonType = 'basic' | 'line' | 'flat' | 'raised';
 export class NgxButtonComponent implements OnInit {
 
   hover: boolean = false;
+  focus: boolean = false;
 
   readonly STANDARD_COLORS: Array<NgxButtonColor> = [
     'basic',
@@ -96,6 +98,14 @@ export class NgxButtonComponent implements OnInit {
     this.hover = false;
   }
 
+  @HostListener('focus', ['$event']) onFocus ($event) {
+    this.focus = true;
+  }
+
+  @HostListener('blur', ['$event']) onBlur ($event) {
+    this.focus = false;
+  }
+
   private getBackgroundColor() {
     if (this.ngxButtonType === 'basic') return 'transparent';
     if (this.ngxButtonType === 'line') return 'transparent';
@@ -120,6 +130,15 @@ export class NgxButtonComponent implements OnInit {
     }
     if (this.ngxButtonType === 'line') return `var(--${this.ngxButtonColor})`;
     return 'transparent';
+  }
+
+  getBoxShadow() {
+    if (this.focus) {
+      console.log(`var(--${this.ngxButtonColor}-shadow)`);
+
+      return `var(--${this.ngxButtonColor}-shadow)`;
+      // if (this.ngxButtonType === 'line') return `var(--${this.ngxButtonColor}-disabled, var(--button-disabled-defoult))`;
+    }
   }
 
   getColor() {
