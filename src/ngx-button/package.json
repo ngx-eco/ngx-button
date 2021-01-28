@@ -1,11 +1,38 @@
 {
   "name": "@ngx-eco/ngx-button",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "description": "Angular custom button module",
+  "author": "fil0157 <fil0157@ya.ru>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngx-eco/ngx-themes.git"
+  },
+  "homepage": "https://ngx-themes.ngx-eco.ru",
+  "bugs": {
+    "url": "https://github.com/ngx-eco/ngx-themes/issues"
+  },
   "peerDependencies": {
     "@angular/common": "^11.0.1",
     "@angular/core": "^11.0.1"
   },
   "dependencies": {
     "tslib": "^2.0.0"
-  }
+  },
+  "keywords": [
+    "angular",
+    "button",
+    "ngx",
+    "click",
+    "hover",
+    "focus"
+  ],
+  "main": "bundles/ngx-eco-ngx-themes.umd.js",
+  "module": "fesm2015/ngx-eco-ngx-themes.js",
+  "es2015": "fesm2015/ngx-eco-ngx-themes.js",
+  "esm2015": "esm2015/ngx-eco-ngx-themes.js",
+  "fesm2015": "fesm2015/ngx-eco-ngx-themes.js",
+  "typings": "ngx-eco-ngx-themes.d.ts",
+  "metadata": "ngx-eco-ngx-themes.metadata.json",
+  "sideEffects": false
 }
