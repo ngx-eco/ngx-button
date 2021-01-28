@@ -1,6 +1,6 @@
 {
   "name": "@ngx-eco/ngx-button",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Angular custom button module",
   "author": "fil0157 <fil0157@ya.ru>",
   "license": "MIT",
@@ -25,6 +25,7 @@
     "demo:e2e": "ng e2e demo",
     "lib:start": "ng build @ngx-eco/ngx-button --watch",
     "lib:build": "ng build @ngx-eco/ngx-button && node tools/build-lib.js",
+    "lib:publish": "npm run lib:build && cd dist/lib && npm pack && npm publish",
     "ngcc": "ngcc"
   },
   "devDependencies": {
