@@ -134,8 +134,6 @@ export class NgxButtonComponent implements OnInit {
 
   getBoxShadow() {
     if (this.focus) {
-      console.log(`var(--${this.ngxButtonColor}-shadow)`);
-
       return `var(--${this.ngxButtonColor}-shadow)`;
       // if (this.ngxButtonType === 'line') return `var(--${this.ngxButtonColor}-disabled, var(--button-disabled-defoult))`;
     }
