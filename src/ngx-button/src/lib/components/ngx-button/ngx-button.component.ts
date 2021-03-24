@@ -7,12 +7,11 @@ import {
   OnInit
 } from '@angular/core';
 
-
-
-type NgxButtonColor = 'basic' | 'primary' | 'secondary' | 'help' | 'success' | 'wait' | 'accept' | 'info' | 'warn' | 'danger' | 'error';
-type NgxButtonForm = 'basic' | 'round' | 'square';
-type NgxButtonSize = 'small' | 'normal' | 'large';
-type NgxButtonType = 'basic' | 'line' | 'flat' | 'raised';
+// Project
+import { NgxButtonColor } from '../../interfaces/ngx-button-color';
+import { NgxButtonForm } from '../../interfaces/ngx-button-form';
+import { NgxButtonSize } from '../../interfaces/ngx-button-size';
+import { NgxButtonType } from '../../interfaces/ngx-button-type';
 
 
 
