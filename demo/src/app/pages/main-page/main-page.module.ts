@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 // App
 import { MainPageComponent } from './main-page.component';
 import { MainPageRoutingModule } from './main-page-routing.module';
+import { HeaderModule } from '../../components/header/header.module';
 import { SectionModule } from '../../components/section/section.module';
 
 
@@ -15,6 +16,7 @@ import { SectionModule } from '../../components/section/section.module';
   ],
   imports: [
     CommonModule,
+    HeaderModule,
     SectionModule,
     MainPageRoutingModule,
   ]
