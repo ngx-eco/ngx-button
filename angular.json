@@ -84,10 +84,10 @@
         },
         "test": {
           "builder": "@angular-builders/custom-webpack:karma",
-          "customWebpackConfig": {
-            "path": "./webpack.config.ts"
-          },
           "options": {
+            "customWebpackConfig": {
+              "path": "./webpack.config.ts"
+            },
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
@@ -117,10 +117,10 @@
         },
         "e2e": {
           "builder": "@angular-builders/custom-webpack:protractor",
-          "customWebpackConfig": {
-            "path": "./webpack.config.ts"
-          },
           "options": {
+            "customWebpackConfig": {
+              "path": "./webpack.config.ts"
+            },
             "protractorConfig": "e2e/protractor.conf.js",
             "devServerTarget": "ngx-button:serve"
           },
@@ -185,10 +185,10 @@
       "architect": {
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
-          "customWebpackConfig": {
-            "path": "./webpack.config.ts"
-          },
           "options": {
+            "customWebpackConfig": {
+              "path": "./webpack.config.ts"
+            },
             "outputPath": "dist/demo",
             "index": "demo/src/index.html",
             "main": "demo/src/main.ts",
@@ -253,10 +253,10 @@
         },
         "test": {
           "builder": "@angular-builders/custom-webpack:karma",
-          "customWebpackConfig": {
-            "path": "./webpack.config.ts"
-          },
           "options": {
+            "customWebpackConfig": {
+              "path": "./webpack.config.ts"
+            },
             "main": "demo/src/test.ts",
             "polyfills": "demo/src/polyfills.ts",
             "tsConfig": "demo/tsconfig.spec.json",
@@ -286,10 +286,10 @@
         },
         "e2e": {
           "builder": "@angular-builders/custom-webpack:protractor",
-          "customWebpackConfig": {
-            "path": "./webpack.config.ts"
-          },
           "options": {
+            "customWebpackConfig": {
+              "path": "./webpack.config.ts"
+            },
             "protractorConfig": "demo/e2e/protractor.conf.js",
             "devServerTarget": "demo:serve"
           },
