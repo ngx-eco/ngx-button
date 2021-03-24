@@ -4,7 +4,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 
 @Component({
-  selector: 'app-section',
+  selector: 'section',
   templateUrl: './section.component.pug',
   styleUrls: ['./section.component.scss']
 })
