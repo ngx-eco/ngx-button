@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 
 // App
 import { MainPageComponent } from './main-page.component';
+import { SectionModule } from '../../section/section.module';
+import { MainPageRoutingModule } from './main-page-routing.module';
+import { HeaderModule } from '../../components/header/header.module';
 
 
 
@@ -13,9 +16,9 @@ import { MainPageComponent } from './main-page.component';
   ],
   imports: [
     CommonModule,
-  ],
-  exports: [
-    MainPageComponent,
+    HeaderModule,
+    SectionModule,
+    MainPageRoutingModule,
   ],
 })
 export class MainPageModule { }

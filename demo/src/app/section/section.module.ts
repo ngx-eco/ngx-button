@@ -5,6 +5,9 @@ import { CommonModule } from '@angular/common';
 // App
 import { SectionComponent } from './section.component';
 
+// Project
+import { NgxButtonModule } from '@ngx-eco/ngx-button';
+
 
 
 @NgModule({
@@ -13,6 +16,7 @@ import { SectionComponent } from './section.component';
   ],
   imports: [
     CommonModule,
+    NgxButtonModule
   ],
   exports: [
     SectionComponent,
