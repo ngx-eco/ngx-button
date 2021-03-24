@@ -17,6 +17,7 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
+    "lint:fix": "ng lint -fix",
     "e2e": "ng e2e",
     "demo:start": "ng serve demo",
     "demo:build": "ng build demo --prod",
@@ -25,6 +26,9 @@
     "demo:e2e": "ng e2e demo",
     "lib:start": "ng build @ngx-eco/ngx-button --watch",
     "lib:build": "ng build @ngx-eco/ngx-button && node tools/build-lib.js",
+    "lib:test": "ng test @ngx-eco/ngx-button",
+    "lib:lint": "ng lint @ngx-eco/ngx-button",
+    "lib:lint:fix": "ng lint @ngx-eco/ngx-button --fix",
     "lib:publish": "npm run lib:build && cd dist/lib && npm pack && npm publish",
     "ngcc": "ngcc"
   },
