@@ -2,9 +2,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-// Project
-import { NgxButtonModule } from '@ngx-eco/ngx-button';
-
 // App
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -16,9 +13,8 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent,
   ],
   imports: [
-    AppRoutingModule,
     BrowserModule,
-    NgxButtonModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
