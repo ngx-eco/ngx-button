@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 // App
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { DemoService } from './services/demo/demo.service';
 
 
 
@@ -16,7 +17,9 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    DemoService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

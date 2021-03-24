@@ -1,5 +1,8 @@
 // Angular
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+// App
+import { DemoService } from '../../services/demo/demo.service';
 
 
 
@@ -10,11 +13,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SectionComponent implements OnInit {
 
-  @Input() size
-  @Input() form
-  @Input() type
-
-  constructor() { }
+  constructor(
+    public demo: DemoService,
+  ) { }
 
   ngOnInit(): void {
   }
