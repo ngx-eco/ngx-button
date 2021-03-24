@@ -1,6 +1,9 @@
 // Angular
 import { Component, OnInit } from '@angular/core';
 
+// App
+import { DemoService } from '../../services/demo/demo.service';
+
 
 
 @Component({
@@ -10,7 +13,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public demo: DemoService,
+  ) { }
 
   ngOnInit(): void {
   }
