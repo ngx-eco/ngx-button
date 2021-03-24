@@ -2,7 +2,6 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  ElementRef,
   HostListener,
   Input,
   OnInit
@@ -10,7 +9,7 @@ import {
 
 
 
-type NgxButtonColor = 'basic' | 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info';
+type NgxButtonColor = 'basic' | 'primary' | 'secondary' | 'help' | 'success' | 'wait' | 'accept' | 'info' | 'warn' | 'danger' | 'error';
 type NgxButtonForm = 'basic' | 'round' | 'square';
 type NgxButtonSize = 'small' | 'normal' | 'large';
 type NgxButtonType = 'basic' | 'line' | 'flat' | 'raised';
@@ -24,14 +23,14 @@ type NgxButtonType = 'basic' | 'line' | 'flat' | 'raised';
   host: {
     'class': 'ngx-button',
 
-    '[class.ngx-button-small]': 'ngxButtonSize === "small"',
-    '[class.ngx-button-normal]': 'ngxButtonSize === "normal"',
-    '[class.ngx-button-large]': 'ngxButtonSize === "large"',
+    '[class.ngx-button-small]': `ngxButtonSize === 'small'`,
+    '[class.ngx-button-normal]': `ngxButtonSize === 'normal'`,
+    '[class.ngx-button-large]': `ngxButtonSize === 'large'`,
 
-    '[class.ngx-button-type-basic]': 'ngxButtonType === "basic"',
-    '[class.ngx-button-type-line]': 'ngxButtonType === "line"',
-    '[class.ngx-button-type-flat]': 'ngxButtonType === "flat"',
-    '[class.ngx-button-type-raised]': 'ngxButtonType === "raised"',
+    '[class.ngx-button-type-basic]': `ngxButtonType === 'basic'`,
+    '[class.ngx-button-type-line]': `ngxButtonType === 'line'`,
+    '[class.ngx-button-type-flat]': `ngxButtonType === 'flat'`,
+    '[class.ngx-button-type-raised]': `ngxButtonType === 'raised'`,
 
     '[style.background-color]': 'getBackgroundColor()',
     '[style.border-radius]': 'getBorderRadius()',
@@ -48,44 +47,15 @@ export class NgxButtonComponent implements OnInit {
   hover: boolean = false;
   focus: boolean = false;
 
-  readonly STANDARD_COLORS: Array<NgxButtonColor> = [
-    'basic',
-    'primary',
-    'secondary',
-    'success',
-    'danger',
-    'warning',
-    'info',
-  ]
-
-  readonly STANDARD_FORMS: Array<NgxButtonForm> = [
-    'basic',
-    'round',
-    'square',
-  ]
-
-  readonly STANDARD_SIZES: Array<NgxButtonSize> = [
-    'small',
-    'normal',
-    'large',
-  ]
-
-  readonly STANDARD_TYPES: Array<NgxButtonType> = [
-    'basic',
-    'line',
-    'flat',
-    'raised',
-  ]
-
-  @Input() ngxButtonColor: NgxButtonColor = 'basic'
-  @Input() ngxButtonForm: NgxButtonForm = 'basic';
-  @Input() ngxButtonSize: NgxButtonSize = 'normal';
-  @Input() ngxButtonType: NgxButtonType = 'basic';
+  @Input('ngx-button') ngxButton: string;
+  @Input('ngx-button-color') ngxButtonColor: NgxButtonColor = 'basic';
+  @Input('ngx-button-form') ngxButtonForm: NgxButtonForm = 'basic';
+  @Input('ngx-button-size') ngxButtonSize: NgxButtonSize = 'normal';
+  @Input('ngx-button-type') ngxButtonType: NgxButtonType = 'basic';
+  @Input('ngx-button-hover-type') ngxButtonHoverType: 'standard' | 'invert' = 'standard';
   @Input() disabled: boolean = false;
 
-  constructor(
-    private elementRef: ElementRef,
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
@@ -106,55 +76,74 @@ export class NgxButtonComponent implements OnInit {
     this.focus = false;
   }
 
-  private getBackgroundColor() {
-    if (this.ngxButtonType === 'basic') return 'transparent';
-    if (this.ngxButtonType === 'line') return 'transparent';
+  public getBackgroundColor() {
+    if (this.ngxButtonType === 'basic') {
+      if (this.hover && this.ngxButtonHoverType === 'invert') return this.getButtonColor();
+      return 'transparent';
+    }
+    if (this.ngxButtonType === 'line') {
+      if (this.hover && this.ngxButtonHoverType === 'invert') return this.getButtonColor();
+      return 'transparent';
+    }
     if (this.disabled) {
       return `var(--${this.ngxButtonColor}-disabled, var(--button-disabled-defoult))`;
     }
     if (this.hover) {
-      return `var(--${this.ngxButtonColor}-hover)`;
+      return this.getButtonColorHover();
     }
-    return `var(--${this.ngxButtonColor})`
+    return this.getButtonColor()
   }
 
-  private getBorderRadius() {
+  public getBorderRadius() {
     return this.ngxButtonForm === 'basic' ? '5px' : this.ngxButtonForm === 'round' ? '50px' : '0';
   }
 
-  getBorderColor() {
+  public getBorderColor() {
     if (this.disabled) {
       if (this.ngxButtonType === 'line') {
         return `var(--${this.ngxButtonColor}-disabled, var(--button-disabled-defoult))`;
       }
     }
-    if (this.ngxButtonType === 'line') return `var(--${this.ngxButtonColor})`;
+    if (this.ngxButtonType === 'line') {
+      return this.getButtonColor();
+    }
     return 'transparent';
   }
 
-  getBoxShadow() {
+  public getBoxShadow() {
     if (this.focus) {
       return `var(--${this.ngxButtonColor}-shadow)`;
       // if (this.ngxButtonType === 'line') return `var(--${this.ngxButtonColor}-disabled, var(--button-disabled-defoult))`;
     }
   }
 
-  getColor() {
+  public getColor() {
     if (this.disabled) {
       if (this.ngxButtonType === 'basic') return `var(--${this.ngxButtonColor}-disabled, var(--button-disabled-defoult))`;
       if (this.ngxButtonType === 'line') return `var(--${this.ngxButtonColor}-disabled, var(--button-disabled-defoult))`;
     }
-    if (this.ngxButtonType === 'basic') return `var(--${this.ngxButtonColor})`;
-    if (this.ngxButtonType === 'line') return `var(--${this.ngxButtonColor})`;
+    if (this.hover) {
+      if (this.ngxButtonType === 'basic' && this.ngxButtonHoverType === 'invert') return `#fff`;
+      if (this.ngxButtonType === 'line' && this.ngxButtonHoverType === 'invert') return `#fff`;
+    }
+    if (this.ngxButtonType === 'basic') return this.getButtonColor();
+    if (this.ngxButtonType === 'line') return this.getButtonColor();
     return '#fff';
   }
 
-  private getHostElement(): HTMLElement {
-    return this.elementRef.nativeElement;
+  private getButtonColor(): string {
+    if (this.getCustomProperty()) return `var(-${this.getCustomProperty()}-${this.ngxButtonColor})`;
+    return `var(--${this.ngxButtonColor})`;
   }
 
-  private hasHostAttributes(...attributes: string[]): boolean {
-    return attributes.some(attribute => this.getHostElement().hasAttribute(attribute));
+  private getButtonColorHover(): string {
+    if (this.getCustomProperty()) return `var(-${this.getCustomProperty()}-${this.ngxButtonColor}-hover)`;
+    return `var(--${this.ngxButtonColor}-hover)`;
+  }
+
+  private getCustomProperty(): string {
+    if (this.ngxButton && this.ngxButton.length) return `-${this.ngxButton}`;
+    return null;
   }
 
 }
