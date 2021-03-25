@@ -8,10 +8,11 @@ import {
 } from '@angular/core';
 
 // Project
-import { NgxButtonColor } from '../../interfaces/ngx-button-color';
 import { NgxButtonForm } from '../../interfaces/ngx-button-form';
 import { NgxButtonSize } from '../../interfaces/ngx-button-size';
 import { NgxButtonType } from '../../interfaces/ngx-button-type';
+import { NgxButtonColor } from '../../interfaces/ngx-button-color';
+import { NgxButtonHoverType } from '../../interfaces/ngx-button-hover-type';
 
 
 
@@ -51,7 +52,7 @@ export class NgxButtonComponent implements OnInit {
   @Input('ngx-button-form') ngxButtonForm: NgxButtonForm = 'basic';
   @Input('ngx-button-size') ngxButtonSize: NgxButtonSize = 'normal';
   @Input('ngx-button-type') ngxButtonType: NgxButtonType = 'basic';
-  @Input('ngx-button-hover-type') ngxButtonHoverType: 'standard' | 'invert' = 'standard';
+  @Input('ngx-button-hover-type') ngxButtonHoverType: NgxButtonHoverType = 'standard';
   @Input() disabled: boolean = false;
 
   constructor() { }

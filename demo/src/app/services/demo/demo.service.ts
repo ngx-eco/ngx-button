@@ -5,7 +5,8 @@ import { Injectable } from '@angular/core';
 import {
   NgxButtonType,
   NgxButtonForm,
-  NgxButtonSize
+  NgxButtonSize,
+  NgxButtonHoverType
 } from '@ngx-eco/ngx-button';
 
 
@@ -18,6 +19,7 @@ export class DemoService {
   public type: NgxButtonType = 'flat';
   public size: NgxButtonSize = 'normal';
   public form: NgxButtonForm = 'basic';
+  public hover: NgxButtonHoverType = 'standard';
   public custom: string = '';
 
   constructor() { }
@@ -67,6 +69,19 @@ export class DemoService {
         break;
       case 'square':
         this.form = 'basic';
+        break;
+      default:
+        break;
+    }
+  }
+
+  public toggleHoverType() {
+    switch (this.hover) {
+      case 'standard':
+        this.hover = 'invert';
+        break;
+      case 'invert':
+        this.hover = 'standard';
         break;
       default:
         break;

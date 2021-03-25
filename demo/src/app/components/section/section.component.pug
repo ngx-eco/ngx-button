@@ -4,6 +4,7 @@ mixin button(color)
       (click)="click()",
       [disabled]="false",
       ngx-button-color=color,
+      [ngx-button-hover-type]="demo.hover",
       [ngx-button]="demo.custom",
       [ngx-button-size]="demo.size",
       [ngx-button-form]="demo.form",
