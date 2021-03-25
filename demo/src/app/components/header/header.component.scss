@@ -3,6 +3,7 @@ div.header {
   display: flex;
   flex-direction: row;
   padding: 10px 30px;
+  border-bottom: 1px solid #000;
 
   button:not(:last-child) {
     margin-right: 20px;
