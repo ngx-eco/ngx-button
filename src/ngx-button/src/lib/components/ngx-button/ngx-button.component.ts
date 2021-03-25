@@ -16,7 +16,7 @@ import { NgxButtonType } from '../../interfaces/ngx-button-type';
 
 
 @Component({
-  selector: 'button[ngx-button], a[ngx-button]',
+  selector: 'button[ngx-button], a[ngx-button], input[type="button"][ngx-button], input[type="submit"][ngx-button]',
   templateUrl: './ngx-button.component.html',
   styleUrls: ['./ngx-button.component.scss'],
   host: {
