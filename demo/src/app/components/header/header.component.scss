@@ -1,11 +1,16 @@
 div.header {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
+  justify-content: center;
   padding: 10px 30px;
   border-bottom: 1px solid #000;
 
-  button:not(:last-child) {
-    margin-right: 20px;
+  button {
+    margin: 10px;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
   }
 }
