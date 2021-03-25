@@ -1,16 +1,21 @@
 div.header {
   width: 100%;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
+  flex-flow: column nowrap;
   padding: 10px 30px;
   border-bottom: 1px solid #000;
 
-  button {
-    margin: 10px;
+  div.row {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
 
-    &:not(:last-child) {
-      margin-right: 20px;
+    button {
+      margin: 10px;
+
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
     }
   }
 }
