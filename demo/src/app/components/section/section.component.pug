@@ -1,32 +1,33 @@
 mixin button(color)
-  button(
-    ngx-button,
-    (click)="click()",
-    [disabled]="false",
-    ngx-button-color=color,
-    [ngx-button-size]="demo.size",
-    [ngx-button-form]="demo.form",
-    [ngx-button-type]="demo.type")= color
-  button(
-    ngx-button,
-    (click)="click()",
-    [disabled]="true",
-    ngx-button-color=color,
-    [ngx-button-size]="demo.size",
-    [ngx-button-form]="demo.form",
-    [ngx-button-type]="demo.type")= color
+  div.row
+    button(
+      ngx-button,
+      (click)="click()",
+      [disabled]="false",
+      ngx-button-color=color,
+      [ngx-button-size]="demo.size",
+      [ngx-button-form]="demo.form",
+      [ngx-button-type]="demo.type")= color
+    button(
+      ngx-button,
+      (click)="click()",
+      [disabled]="true",
+      ngx-button-color=color,
+      [ngx-button-size]="demo.size",
+      [ngx-button-form]="demo.form",
+      [ngx-button-type]="demo.type")= color
 
 
 
-div
+div.content
 
   +button('basic')
-  +button('primary')
   +button('secondary')
-  +button('help')
+  +button('primary')
   +button('success')
-  +button('wait')
   +button('accept')
+  +button('wait')
+  +button('help')
   +button('info')
   +button('warn')
   +button('danger')

@@ -1,0 +1,10 @@
+div.header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 10px 30px;
+
+  button:not(:last-child) {
+    margin-right: 20px;
+  }
+}

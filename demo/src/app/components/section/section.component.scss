@@ -1,6 +1,14 @@
-div {
+div.content {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   padding: 10px;
-  justify-content: space-around;
+}
+
+div.row {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+button {
+  margin: 10px;
 }

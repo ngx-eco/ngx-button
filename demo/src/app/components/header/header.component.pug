@@ -1,26 +1,28 @@
-button(
-  ngx-button,
-  [disabled]="false",
-  ngx-button-color='primary',
-  (click)="demo.toggleType()",
-  [ngx-button-size]="demo.size",
-  [ngx-button-form]="demo.form",
-  [ngx-button-type]="demo.type") Изменить тип
+div.header
 
-button(
-  ngx-button,
-  [disabled]="false",
-  ngx-button-color='info',
-  (click)="demo.toggleSize()",
-  [ngx-button-size]="demo.size",
-  [ngx-button-form]="demo.form",
-  [ngx-button-type]="demo.type") Изменить размер
+  button(
+    ngx-button,
+    [disabled]="false",
+    ngx-button-color='primary',
+    (click)="demo.toggleType()",
+    [ngx-button-size]="demo.size",
+    [ngx-button-form]="demo.form",
+    [ngx-button-type]="demo.type") Изменить тип
 
-button(
-  ngx-button,
-  [disabled]="false",
-  ngx-button-color='help',
-  (click)="demo.toggleForm()",
-  [ngx-button-size]="demo.size",
-  [ngx-button-form]="demo.form",
-  [ngx-button-type]="demo.type") Изменить форму
+  button(
+    ngx-button,
+    [disabled]="false",
+    ngx-button-color='info',
+    (click)="demo.toggleSize()",
+    [ngx-button-size]="demo.size",
+    [ngx-button-form]="demo.form",
+    [ngx-button-type]="demo.type") Изменить размер
+
+  button(
+    ngx-button,
+    [disabled]="false",
+    ngx-button-color='help',
+    (click)="demo.toggleForm()",
+    [ngx-button-size]="demo.size",
+    [ngx-button-form]="demo.form",
+    [ngx-button-type]="demo.type") Изменить форму
