@@ -1,18 +1,18 @@
 mixin button(color)
   div.row
     button(
-      ngx-button,
       (click)="click()",
       [disabled]="false",
       ngx-button-color=color,
+      [ngx-button]="demo.custom",
       [ngx-button-size]="demo.size",
       [ngx-button-form]="demo.form",
       [ngx-button-type]="demo.type")= color
     button(
-      ngx-button,
       (click)="click()",
       [disabled]="true",
       ngx-button-color=color,
+      [ngx-button]="demo.custom",
       [ngx-button-size]="demo.size",
       [ngx-button-form]="demo.form",
       [ngx-button-type]="demo.type")= color

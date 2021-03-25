@@ -15,10 +15,10 @@ import {
 })
 export class DemoService {
 
-  public type: NgxButtonType = 'basic';
+  public type: NgxButtonType = 'flat';
   public size: NgxButtonSize = 'normal';
   public form: NgxButtonForm = 'basic';
-  public custom: boolean;
+  public custom: string = 'custom';
 
   constructor() { }
 
@@ -67,6 +67,19 @@ export class DemoService {
         break;
       case 'square':
         this.form = 'basic';
+        break;
+      default:
+        break;
+    }
+  }
+
+  public toggleCustom() {
+    switch (this.custom) {
+      case 'custom':
+        this.custom = '';
+        break;
+      case '':
+        this.custom = 'custom';
         break;
       default:
         break;

@@ -4,25 +4,34 @@ div.header
     ngx-button,
     [disabled]="false",
     ngx-button-color='primary',
-    (click)="demo.toggleType()",
-    [ngx-button-size]="demo.size",
-    [ngx-button-form]="demo.form",
-    [ngx-button-type]="demo.type") Изменить тип
+    ngx-button-type="flat",
+    ngx-button-form="basic",
+    ngx-button-size="normal",
+    (click)="demo.toggleType()") Изменить тип
 
   button(
     ngx-button,
     [disabled]="false",
     ngx-button-color='info',
-    (click)="demo.toggleSize()",
-    [ngx-button-size]="demo.size",
-    [ngx-button-form]="demo.form",
-    [ngx-button-type]="demo.type") Изменить размер
+    ngx-button-type="flat",
+    ngx-button-form="basic",
+    ngx-button-size="normal",
+    (click)="demo.toggleSize()") Изменить размер
 
   button(
     ngx-button,
     [disabled]="false",
     ngx-button-color='help',
-    (click)="demo.toggleForm()",
-    [ngx-button-size]="demo.size",
-    [ngx-button-form]="demo.form",
-    [ngx-button-type]="demo.type") Изменить форму
+    ngx-button-type="flat",
+    ngx-button-form="basic",
+    ngx-button-size="normal",
+    (click)="demo.toggleForm()") Изменить форму
+
+  button(
+    ngx-button,
+    [disabled]="false",
+    ngx-button-color='help',
+    ngx-button-type="flat",
+    ngx-button-form="basic",
+    ngx-button-size="normal",
+    (click)="demo.toggleCustom()") Изменить класс
