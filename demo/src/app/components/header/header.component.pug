@@ -1,38 +1,46 @@
 div.header
 
-  div.row
+  div.block
 
-    button(
-      ngx-button,
-      ngx-button-color='primary',
-      ngx-button-type="flat",
-      ngx-button-form="basic",
-      ngx-button-size="normal",
-      (click)="demo.toggleType()") Изменить тип
+    span.title Основные
 
-    button(
-      ngx-button,
-      ngx-button-color='info',
-      ngx-button-type="flat",
-      ngx-button-form="basic",
-      ngx-button-size="normal",
-      (click)="demo.toggleSize()") Изменить размер
+    div.buttons
 
-    button(
-      ngx-button,
-      [disabled]="false",
-      ngx-button-color='help',
-      ngx-button-type="flat",
-      ngx-button-form="basic",
-      ngx-button-size="normal",
-      (click)="demo.toggleForm()") Изменить форму
+      button(
+        ngx-button,
+        ngx-button-color='primary',
+        ngx-button-type="flat",
+        ngx-button-form="basic",
+        ngx-button-size="normal",
+        (click)="demo.toggleType()") Изменить тип
 
-  div.row
+      button(
+        ngx-button,
+        ngx-button-color='info',
+        ngx-button-type="flat",
+        ngx-button-form="basic",
+        ngx-button-size="normal",
+        (click)="demo.toggleSize()") Изменить размер
 
-    button(
-      ngx-button,
-      ngx-button-color='help',
-      ngx-button-type="flat",
-      ngx-button-form="basic",
-      ngx-button-size="normal",
-      (click)="demo.toggleCustom()") Изменить цвет
+      button(
+        ngx-button,
+        [disabled]="false",
+        ngx-button-color='help',
+        ngx-button-type="flat",
+        ngx-button-form="basic",
+        ngx-button-size="normal",
+        (click)="demo.toggleForm()") Изменить форму
+
+  div.block
+
+    span.title Дополнительные
+
+    div.buttons
+
+      button(
+        ngx-button,
+        ngx-button-color='help',
+        ngx-button-type="flat",
+        ngx-button-form="basic",
+        ngx-button-size="normal",
+        (click)="demo.toggleCustom()") Изменить цвет
