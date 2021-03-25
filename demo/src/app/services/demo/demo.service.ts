@@ -18,7 +18,7 @@ export class DemoService {
   public type: NgxButtonType = 'flat';
   public size: NgxButtonSize = 'normal';
   public form: NgxButtonForm = 'basic';
-  public custom: string = 'custom';
+  public custom: string = '';
 
   constructor() { }
 
