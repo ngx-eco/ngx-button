@@ -6,24 +6,24 @@ import { NgxButtonComponent } from './ngx-button.component';
 
 
 
-describe('NgxButtonComponent', () => {
-  let component: NgxButtonComponent;
-  let fixture: ComponentFixture<NgxButtonComponent>;
+// describe('NgxButtonComponent', () => {
+//   let component: NgxButtonComponent;
+//   let fixture: ComponentFixture<NgxButtonComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ NgxButtonComponent ]
-    })
-    .compileComponents();
-  });
+//   beforeEach(async () => {
+//     await TestBed.configureTestingModule({
+//       declarations: [ NgxButtonComponent ]
+//     })
+//     .compileComponents();
+//   });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(NgxButtonComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+//   beforeEach(() => {
+//     fixture = TestBed.createComponent(NgxButtonComponent);
+//     component = fixture.componentInstance;
+//     fixture.detectChanges();
+//   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+//   it('should create', () => {
+//     expect(component).toBeTruthy();
+//   });
+// });
