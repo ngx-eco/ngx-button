@@ -111,10 +111,7 @@ export class NgxButtonComponent implements OnInit {
   }
 
   public getBoxShadow() {
-    if (this.focus) {
-      return `var(--${this.ngxButtonColor}-shadow)`;
-      // if (this.ngxButtonType === 'line') return this.getButtonColorDisabled();
-    }
+    if (this.focus) return `var(--${this.ngxButtonColor}-shadow)`;
   }
 
   public getColor() {
@@ -142,7 +139,7 @@ export class NgxButtonComponent implements OnInit {
   }
 
   private getButtonColorDisabled(): string {
-    if (this.getCustomProperty()) return `var(-${this.getCustomProperty()}-${this.ngxButtonColor}-disabled, var(-${this.getCustomProperty()}-disabled-defoult))`;
+    if (this.getCustomProperty()) return `var(-${this.getCustomProperty()}-${this.ngxButtonColor}-disabled, var(-${this.getCustomProperty()}-disabled-defoult, var(--disabled-defoult)))`;
     return `var(--${this.ngxButtonColor}-disabled, var(--disabled-defoult))`;
   }
 
