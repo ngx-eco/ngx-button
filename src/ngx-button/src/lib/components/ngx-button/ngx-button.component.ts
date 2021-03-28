@@ -111,7 +111,7 @@ export class NgxButtonComponent implements OnInit {
   }
 
   public getBoxShadow() {
-    if (this.focus) return `var(--${this.ngxButtonColor}-shadow)`;
+    if (this.focus) return this.getButtonShadow();
   }
 
   public getColor() {
@@ -128,9 +128,9 @@ export class NgxButtonComponent implements OnInit {
     return '#fff';
   }
 
-  private getButtonColor(): string {
-    if (this.getCustomProperty()) return `var(-${this.getCustomProperty()}-${this.ngxButtonColor})`;
-    return `var(--${this.ngxButtonColor})`;
+  private getButtonShadow(): string {
+    if (this.getCustomProperty()) return `var(-${this.getCustomProperty()}-${this.ngxButtonColor}-shadow)`;
+    return `var(--${this.ngxButtonColor}-shadow)`;
   }
 
   private getButtonColorHover(): string {
@@ -141,6 +141,11 @@ export class NgxButtonComponent implements OnInit {
   private getButtonColorDisabled(): string {
     if (this.getCustomProperty()) return `var(-${this.getCustomProperty()}-${this.ngxButtonColor}-disabled, var(-${this.getCustomProperty()}-disabled-defoult, var(--disabled-defoult)))`;
     return `var(--${this.ngxButtonColor}-disabled, var(--disabled-defoult))`;
+  }
+
+  private getButtonColor(): string {
+    if (this.getCustomProperty()) return `var(-${this.getCustomProperty()}-${this.ngxButtonColor})`;
+    return `var(--${this.ngxButtonColor})`;
   }
 
   private getCustomProperty(): string {
