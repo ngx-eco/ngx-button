@@ -1,6 +1,9 @@
 // Angular
 import { Component, OnInit } from '@angular/core';
 
+// Libs
+import { NgxThemesService } from '@ngx-eco/ngx-themes';
+
 
 
 @Component({
@@ -10,7 +13,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private themes: NgxThemesService,
+  ) { }
 
   ngOnInit(): void {
   }
