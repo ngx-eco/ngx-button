@@ -3,14 +3,14 @@
     "name": "NgxButtonModule",
     "path": "dist/lib/esm2015/lib/ngx-button.module.js",
     "import": "{ NgxButtonModule }",
-    "ignore": ["@angular", "rxjs"],
-    "limit": "1.5 KB"
+    "ignore": ["@angular", "rxjs", "tslib", "functionone"],
+    "limit": "2.5 KB"
   },
   {
     "name": "NgxButtonComponent",
     "path": "dist/lib/esm2015/lib/components/ngx-button/ngx-button.component.js",
     "import": "{ NgxButtonComponent }",
-    "ignore": ["@angular", "rxjs"],
-    "limit": "1.5 KB"
+    "ignore": ["@angular", "rxjs", "tslib", "functionone"],
+    "limit": "2.5 KB"
   }
 ]
