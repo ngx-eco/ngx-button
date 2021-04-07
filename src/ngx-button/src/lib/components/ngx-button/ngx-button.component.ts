@@ -7,11 +7,16 @@ import {
   OnInit
 } from '@angular/core';
 
+// Libs
+import { NgxThemesService } from '@ngx-eco/ngx-themes';
+import { isHexString, hexStringToRgba, RGBA } from 'functionone';
+
 // Project
 import { NgxButtonForm } from '../../interfaces/ngx-button-form';
 import { NgxButtonSize } from '../../interfaces/ngx-button-size';
 import { NgxButtonType } from '../../interfaces/ngx-button-type';
 import { NgxButtonColor } from '../../interfaces/ngx-button-color';
+import { NgxButtonTextColor } from '../../interfaces/ngx-button-text-color';
 import { NgxButtonHoverType } from '../../interfaces/ngx-button-hover-type';
 
 
@@ -49,13 +54,16 @@ export class NgxButtonComponent implements OnInit {
 
   @Input('ngx-button') ngxButton: string = '';
   @Input('ngx-button-color') ngxButtonColor: NgxButtonColor = 'basic';
+  @Input('ngx-button-text-color') ngxButtonTextColor: NgxButtonTextColor = 'standard';
   @Input('ngx-button-form') ngxButtonForm: NgxButtonForm = 'basic';
   @Input('ngx-button-size') ngxButtonSize: NgxButtonSize = 'normal';
   @Input('ngx-button-type') ngxButtonType: NgxButtonType = 'basic';
-  @Input('ngx-button-hover-type') ngxButtonHoverType: NgxButtonHoverType = 'standard';
+  @Input('ngx-button-hover-type') ngxButtonHoverType: NgxButtonHoverType = 'invert';
   @Input() disabled: boolean = false;
 
-  constructor() { }
+  constructor(
+    private theme: NgxThemesService,
+  ) { }
 
   ngOnInit(): void {
   }
@@ -120,12 +128,12 @@ export class NgxButtonComponent implements OnInit {
       if (this.ngxButtonType === 'line') return this.getButtonColorDisabled();
     }
     if (this.hover) {
-      if (this.ngxButtonType === 'basic' && this.ngxButtonHoverType === 'invert') return `#fff`;
-      if (this.ngxButtonType === 'line' && this.ngxButtonHoverType === 'invert') return `#fff`;
+      if (this.ngxButtonType === 'basic' && this.ngxButtonHoverType === 'invert') return this.getButtonTextColor();
+      if (this.ngxButtonType === 'line' && this.ngxButtonHoverType === 'invert') return this.getButtonTextColor();
     }
     if (this.ngxButtonType === 'basic') return this.getButtonColor();
     if (this.ngxButtonType === 'line') return this.getButtonColor();
-    return '#fff';
+    return this.getButtonTextColor();
   }
 
   private getButtonShadow(): string {
@@ -148,9 +156,32 @@ export class NgxButtonComponent implements OnInit {
     return `var(--${this.ngxButtonColor})`;
   }
 
+  private getButtonTextColor(): string {
+    if (this.ngxButtonTextColor === 'standard') {
+      if (this.getCustomProperty()) return `var(-${this.getCustomProperty()}-${this.ngxButtonTextColor}-text, var(--color))`;
+      return `var(--${this.ngxButtonTextColor}-text, var(--color))`;
+    } else {
+      let bright: boolean
+      let rgba: RGBA;
+      let color = this.theme.getProperty(`--${this.ngxButtonColor}`)
+      if (isHexString(color)) rgba = hexStringToRgba(color)
+      // Тут сделать rgbaStringTorgba()
+      bright = this.getBrightness(rgba) > 128 || rgba.a < 0.5 ? false : true;
+      if (bright) {
+        if (this.getCustomProperty()) return `var(-${this.getCustomProperty()}-${this.ngxButtonTextColor}-text, var(--color))`;
+        return `var(--${this.ngxButtonTextColor}-text, var(--color))`;
+      } else {
+        if (this.getCustomProperty()) return `var(-${this.getCustomProperty()}-${this.ngxButtonTextColor}-text, var(--color-invert))`;
+        return `var(--${this.ngxButtonTextColor}-text, var(--color-invert))`;
+      }
+    }
+  }
+
   private getCustomProperty(): string {
     if (this.ngxButton && this.ngxButton.length) return `-${this.ngxButton}`;
     return null;
   }
+
+  private getBrightness = ({ r, g, b }: RGBA) => (r * 299 + g * 587 + b * 114) / 1000;
 
 }

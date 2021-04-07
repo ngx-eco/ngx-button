@@ -13,4 +13,5 @@ export * from './lib/interfaces/ngx-button-color';
 export * from './lib/interfaces/ngx-button-form';
 export * from './lib/interfaces/ngx-button-size';
 export * from './lib/interfaces/ngx-button-type';
+export * from './lib/interfaces/ngx-button-text-color';
 export * from './lib/interfaces/ngx-button-hover-type';

@@ -3,5 +3,9 @@
   "dest": "../../dist/lib",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "@ngx-eco/ngx-themes",
+    "functionone"
+  ]
 }

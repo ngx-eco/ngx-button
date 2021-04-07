@@ -6,6 +6,10 @@ import { Theme } from '@ngx-eco/ngx-themes';
 export const LightTheme: Theme = {
   id: 'lightTheme',
   values: {
+    '--color': '#ffffff',
+    '--color-invert': '#000000',
+
+
     '--basic': '#dddddd',
     '--primary': '#3f80ea',
     '--secondary': '#495057',

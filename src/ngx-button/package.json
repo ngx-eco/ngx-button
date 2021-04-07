@@ -14,9 +14,12 @@
   },
   "peerDependencies": {
     "@angular/common": "^11.0.1",
-    "@angular/core": "^11.0.1"
+    "@angular/core": "^11.0.1",
+    "@ngx-eco/ngx-themes": "^6.0.0"
   },
   "dependencies": {
+    "@ngx-eco/ngx-themes": "^6.0.0",
+    "functionone": "^1.1.0",
     "tslib": "^2.0.0"
   },
   "keywords": [

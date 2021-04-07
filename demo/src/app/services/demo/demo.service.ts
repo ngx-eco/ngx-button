@@ -6,7 +6,8 @@ import {
   NgxButtonType,
   NgxButtonForm,
   NgxButtonSize,
-  NgxButtonHoverType
+  NgxButtonHoverType,
+  NgxButtonTextColor,
 } from '@ngx-eco/ngx-button';
 
 
@@ -20,6 +21,7 @@ export class DemoService {
   public size: NgxButtonSize = 'normal';
   public form: NgxButtonForm = 'basic';
   public hover: NgxButtonHoverType = 'standard';
+  public text: NgxButtonTextColor = 'invert';
   public custom: string = '';
 
   constructor() { }
@@ -95,6 +97,19 @@ export class DemoService {
         break;
       case '':
         this.custom = 'custom';
+        break;
+      default:
+        break;
+    }
+  }
+
+  public toggleText() {
+    switch (this.text) {
+      case 'standard':
+        this.text = 'invert';
+        break;
+      case 'invert':
+        this.text = 'standard';
         break;
       default:
         break;
