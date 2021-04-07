@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@ngx-eco/ngx-themes": "^6.0.0",
-    "functionone": "^1.1.0",
+    "functionone": "^2.0.0",
     "tslib": "^2.0.0"
   },
   "keywords": [
