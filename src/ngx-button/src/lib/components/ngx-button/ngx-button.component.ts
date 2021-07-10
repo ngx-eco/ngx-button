@@ -49,17 +49,17 @@ import { NgxButtonHoverType } from '../../interfaces/ngx-button-hover-type';
 })
 export class NgxButtonComponent implements OnInit {
 
-  hover: boolean = false;
-  focus: boolean = false;
+  private hover: boolean = false;
+  private focus: boolean = false;
 
-  @Input('ngx-button') ngxButton: string = '';
-  @Input('ngx-button-color') ngxButtonColor: NgxButtonColor = 'basic';
-  @Input('ngx-button-text-color') ngxButtonTextColor: NgxButtonTextColor = 'standard';
-  @Input('ngx-button-form') ngxButtonForm: NgxButtonForm = 'basic';
-  @Input('ngx-button-size') ngxButtonSize: NgxButtonSize = 'normal';
-  @Input('ngx-button-type') ngxButtonType: NgxButtonType = 'basic';
-  @Input('ngx-button-hover-type') ngxButtonHoverType: NgxButtonHoverType = 'invert';
-  @Input() disabled: boolean = false;
+  @Input('ngx-button') public ngxButton: string = '';
+  @Input('ngx-button-color') public ngxButtonColor: NgxButtonColor = 'basic';
+  @Input('ngx-button-text-color') public ngxButtonTextColor: NgxButtonTextColor = 'standard';
+  @Input('ngx-button-form') public ngxButtonForm: NgxButtonForm = 'basic';
+  @Input('ngx-button-size') public ngxButtonSize: NgxButtonSize = 'normal';
+  @Input('ngx-button-type') public ngxButtonType: NgxButtonType = 'basic';
+  @Input('ngx-button-hover-type') public ngxButtonHoverType: NgxButtonHoverType = 'invert';
+  @Input() public disabled: boolean = false;
 
   constructor(
     private theme: NgxThemesService,
@@ -178,10 +178,10 @@ export class NgxButtonComponent implements OnInit {
   }
 
   private getCustomProperty(): string {
-    if (this.ngxButton && this.ngxButton.length) return `-${this.ngxButton}`;
+    if (this.ngxButton) return `-${this.ngxButton}`;
     return null;
   }
 
-  private getBrightness = ({ r, g, b }: RGBA) => (r * 299 + g * 587 + b * 114) / 1000;
+  private getBrightness = ({ r, g, b }: RGBA): number => (r * 299 + g * 587 + b * 114) / 1000;
 
 }
