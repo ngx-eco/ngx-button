@@ -136,7 +136,7 @@
       "projectType": "library",
       "root": "src/ngx-button",
       "sourceRoot": "src/ngx-button/src",
-      "prefix": "",
+      "prefix": "ngx",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
