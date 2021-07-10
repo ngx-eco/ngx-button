@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.0.0 (July 10, 2021)
+- Angular update (v12.1.1)
+
 ## 2.0.0 (April 7, 2021)
 - All types are now exported
 - Directive replaced
