@@ -13,12 +13,12 @@
     "url": "https://github.com/ngx-eco/ngx-button/issues"
   },
   "peerDependencies": {
-    "@angular/common": "^11.0.1",
-    "@angular/core": "^11.0.1",
-    "@ngx-eco/ngx-themes": "^6.0.0"
+    "@angular/common": ">=12.0.0 <13.0.0",
+    "@angular/core": ">=12.0.0 <13.0.0",
+    "@ngx-eco/ngx-themes": "^7.0.1"
   },
   "dependencies": {
-    "@ngx-eco/ngx-themes": "^6.0.0",
+    "@ngx-eco/ngx-themes": "^7.0.1",
     "functionone": "^2.0.0",
     "tslib": "^2.0.0"
   },
